@@ -198,42 +198,42 @@ function valid_ip()
 input_UI ()
 {
 
-echo "Hello, following initial setting is requested:"
+#echo "Hello, following initial setting is requested:"
 
 # IP part input
 
-IP="0"
-while ! valid_ip $IP; do
-	read -p "Local IP address (range 192.168.0.100-192.168.1.200), to confirm press [ENTER] or modify: " -e -i 192.168.1.172 IP
-	if valid_ip $IP; then stat='good'; 
-	else stat='bad'; echo "WRONG FORMAT, please enter a valid value for IP address"
-	fi
+IP="192.168.3.45"
+#while ! valid_ip $IP; do
+#	read -p "Local IP address (range 192.168.0.100-192.168.1.200), to confirm press [ENTER] or modify: " -e -i 192.168.1.172 IP
+#	if valid_ip $IP; then stat='good'; 
+#	else stat='bad'; echo "WRONG FORMAT, please enter a valid value for IP address"
+#	fi
 
-done
-	echo "Confirmed IP address: "$IP
+#done
+#	echo "Confirmed IP address: "$IP
 
-PORT=""
-while [[ ! $PORT =~ ^[0-9]+$ ]]; do
-read -p "Local PORT, to confirm press [ENTER] or modify: " -e -i 5172 PORT
-	if [[ ! $PORT =~ ^[0-9]+$ ]];
-	then echo "WRONG FORMAT, please enter a valid value for PORT";
-	fi
-done
-	echo "Confirmed PORT: "$PORT
+PORT="8123"
+#while [[ ! $PORT =~ ^[0-9]+$ ]]; do
+#read -p "Local PORT, to confirm press [ENTER] or modify: " -e -i 5172 PORT
+#	if [[ ! $PORT =~ ^[0-9]+$ ]];
+#	then echo "WRONG FORMAT, please enter a valid value for PORT";
+#	fi
+#done
+#	echo "Confirmed PORT: "$PORT
 	
 # Local WiFi AP name and password setting	
 
-read -p "System WiFi AP name, to confirm press [ENTER] or modify: " -e -i Hydrosys4 WiFiAPname
-echo "Confirmed Name: "$WiFiAPname
+#read -p "System WiFi AP name, to confirm press [ENTER] or modify: " -e -i Hydrosys4 WiFiAPname
+#echo "Confirmed Name: "$WiFiAPname
 
-read -p "System WiFi AP password, to confirm press [ENTER] or modify: " -e -i hydrosystem WiFiAPpsw
-echo "Confirmed Password: "$WiFiAPpsw
+#read -p "System WiFi AP password, to confirm press [ENTER] or modify: " -e -i hydrosystem WiFiAPpsw
+#echo "Confirmed Password: "$WiFiAPpsw
 
 read -p "Do you want to change hostname? (y,n): " -e -i y ChangeHostName
 echo "Confirmed Answer: "$ChangeHostName
 
 if [ "$ChangeHostName" == "y" ]; then
-	read -p "System Hostname, to confirm press [ENTER] or modify: " -e -i hydrosys4-172 NewHostName
+	read -p "System Hostname, to confirm press [ENTER] or modify: " -e -i Zavlaha-hydrosys NewHostName
 	echo "Confirmed Hostname: "$NewHostName
 fi
 
@@ -422,9 +422,9 @@ else
 	mkdir env
 	cd env
 	sudo rm -r autonom
-	git clone https://github.com/Hydrosys4/Master.git
+	git clone https://github.com/jarajanos/Hydrosys_customized.git
 	sudo killall python
-	mv Master autonom
+	mv Hydrosys_customized autonom
 	cd ..
 
 fi
@@ -788,9 +788,9 @@ system_update_light
 install_dependencies
 enable_I2C
 modify_RClocal
-fn_hostapd
-fn_dnsmasq
-fn_dhcpcd
+#fn_hostapd
+#fn_dnsmasq
+#fn_dhcpcd
 fn_ifnames
 install_mjpegstr
 #install_squid3

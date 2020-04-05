@@ -64,24 +64,24 @@ function install_dependencies()
 sudo apt-get -y install python-dev || { echo "ERROR --------------------------Installation failed ----------------" && exit ;}
 sudo apt-get -y install python-pip || { echo "ERROR --------------------------Installation failed ----------------" && exit ;}
 sudo pip install flask || { echo "ERROR --------------------------Installation failed ----------------" && exit ;}
-sudo pip install apscheduler || { echo "ERROR --------------------------Installation failed ----------------" && exit ;}
-sudo pip install pyserial || { echo "ERROR --------------------------Installation failed ----------------" && exit ;}
+sudo pip --no-cache-dir install apscheduler || { echo "ERROR --------------------------Installation failed ----------------" && exit ;}
+sudo pip --no-cache-dir install pyserial || { echo "ERROR --------------------------Installation failed ----------------" && exit ;}
 
 #(for the webcam support)
 sudo apt-get -y install fswebcam || { echo "ERROR --------------------------Installation failed ----------------" && exit ;}
 
 #(for the image thumbnail support)
 sudo apt-get -y install libjpeg-dev || { echo "ERROR --------------------------Installation failed ----------------" && exit ;}
-sudo pip install Pillow || { echo "ERROR --------------------------Installation failed ----------------" && exit ;}
+sudo pip --no-cache-dir install Pillow || { echo "ERROR --------------------------Installation failed ----------------" && exit ;}
 
 #(for external IP address, using DNS)
 sudo apt-get -y install dnsutils || { echo "ERROR --------------------------Installation failed ----------------" && exit ;}
 
 #(encryption)
-sudo pip install pbkdf2 || { echo "ERROR --------------------------Installation failed ----------------" && exit ;}
+sudo pip --no-cache-dir install pbkdf2 || { echo "ERROR --------------------------Installation failed ----------------" && exit ;}
 
 #(web server)
-sudo pip install tornado || { echo "ERROR --------------------------Installation failed ----------------" && exit ;}
+sudo pip --no-cache-dir install tornado || { echo "ERROR --------------------------Installation failed ----------------" && exit ;}
 
 }
 

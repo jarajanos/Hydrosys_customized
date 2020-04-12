@@ -788,9 +788,9 @@ system_update_light
 install_dependencies
 enable_I2C
 modify_RClocal
-#fn_hostapd
-#fn_dnsmasq
-#fn_dhcpcd
+fn_hostapd
+fn_dnsmasq
+fn_dhcpcd
 fn_ifnames
 install_mjpegstr
 #install_squid3
